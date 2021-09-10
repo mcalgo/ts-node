@@ -53,7 +53,13 @@ export class ProductController{
         });
     } 
     
-    delectProduct(){
-        
+    delectProduct(req: Request, res: Response){
+        const { productID } = req.body;
+    
+        const product = this.productService.deletProduct(productID);
+
+        return res.json({
+            product
+        });
     }
 }
