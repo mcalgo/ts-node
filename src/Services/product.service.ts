@@ -105,6 +105,19 @@ export class ProductService {
     }
 
     async deletProduct(id: number){
+        try {
+            
+            const result = await this.productRepo.delete(id);
+            return {
+                ok: true,
+                result
+            }
 
+        } catch (error) {
+            return {
+                ok: false,
+                msg: error
+            }
+        }  
     }
 }

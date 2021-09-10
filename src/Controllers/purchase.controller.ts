@@ -51,14 +51,14 @@ export class PurchaseController{
         });
     } 
     
-    delectPurchase(req: Request, res: Response){
+    deletPurchase(req: Request, res: Response){
 
         const { purchaseID } = req.body;
     
-        const user = this.purchaseService.deletPurchase(purchaseID);
+        const purchase = this.purchaseService.deletPurchase(purchaseID);
 
         return res.json({
-            user
+            purchase
         });
     }
 }
