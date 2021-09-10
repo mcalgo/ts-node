@@ -1,0 +1,24 @@
+### firt install REST Client in VSC
+
+@myUrl = http://localhost:3000
+@videos = /api/user
+
+### Get videos
+GET {{myUrl}}{{videos}}
+
+### Get videos by id
+GET {{myUrl}}{{videos}}/1
+
+### PUT video by id
+PUT  {{myUrl}}{{videos}}/1
+
+### Post video
+POST {{myUrl}}{{videos}}
+
+Content-Type: application/json
+{
+    
+}
+
+### Delete video by id
+DELETE {{myUrl}}{{videos}}/1
