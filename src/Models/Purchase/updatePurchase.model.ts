@@ -4,27 +4,19 @@ import { User } from "../../Entities/user.entity";
 
 export class UpdatePurchase {
 
-    @IsOptional({
-        message: 'El id del producto es requerido'
-    })
+    @IsOptional()
     @IsInt()
     ProductID: Product;
 
-    @IsOptional({
-        message: 'La fecha es requerida'
-    })
+    @IsOptional()
     @IsDate()
     PurchaseDate : Date;
 
-    @IsOptional({
-        message: 'El total es requerido.'
-    })
+    @IsOptional()
     @IsString()
     Total : string;
 
-    @IsOptional({
-        message:  'El id del usuario es requerido.'
-    })
+    @IsOptional()
     @IsInt()
     UserID: User
 }
