@@ -17,9 +17,7 @@ POST {{myUrl}}{{videos}}
 
 Content-Type: application/json
 {
-    "url" : "",
-    "title": "",
-    "description": ""
+    
 }
 
 ### Delete video by id
