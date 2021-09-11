@@ -1,15 +1,17 @@
-import { Column, CreateDateColumn, Entity, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 import { Product } from "./product.entity";
 import { User } from "./user.entity";
 
 @Entity('ProductPurchase')
 export class ProductPurchase{
 
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn({
+        type: 'int'
+    })
     ProductoParchaseID : number;
 
-    @Column()
     @OneToOne(() => Product)
+    @JoinColumn()
     ProductID: Product;
 
     @CreateDateColumn({
@@ -19,10 +21,12 @@ export class ProductPurchase{
     })
     PurchaseDate : Date;
 
-    @Column()
+    @Column({
+        type: 'nvarchar'
+    })
     Total : string;
     
-    @Column()
     @OneToOne(() => User)
+    @JoinColumn()
     UserID: User
 }

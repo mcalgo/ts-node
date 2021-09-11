@@ -16,12 +16,14 @@ const user_entity_1 = require("./user.entity");
 let ProductPurchase = class ProductPurchase {
 };
 __decorate([
-    typeorm_1.PrimaryGeneratedColumn(),
+    typeorm_1.PrimaryGeneratedColumn({
+        type: 'int'
+    }),
     __metadata("design:type", Number)
 ], ProductPurchase.prototype, "ProductoParchaseID", void 0);
 __decorate([
-    typeorm_1.Column(),
     typeorm_1.OneToOne(() => product_entity_1.Product),
+    typeorm_1.JoinColumn(),
     __metadata("design:type", product_entity_1.Product)
 ], ProductPurchase.prototype, "ProductID", void 0);
 __decorate([
@@ -33,12 +35,14 @@ __decorate([
     __metadata("design:type", Date)
 ], ProductPurchase.prototype, "PurchaseDate", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({
+        type: 'nvarchar'
+    }),
     __metadata("design:type", String)
 ], ProductPurchase.prototype, "Total", void 0);
 __decorate([
-    typeorm_1.Column(),
     typeorm_1.OneToOne(() => user_entity_1.User),
+    typeorm_1.JoinColumn(),
     __metadata("design:type", user_entity_1.User)
 ], ProductPurchase.prototype, "UserID", void 0);
 ProductPurchase = __decorate([

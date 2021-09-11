@@ -7,7 +7,7 @@
     "database": "Node_mysql_ts",
     "entities": ["dist/Entities/*.entity.js"],
     "synchronize": true,
-    "migrations": ["src/Migration/*.ts"],
+    "migrations": ["dist/src/Migration/*.js"],
     "cli": {
         "entitiesDir": "src/Entities",
         "migrationsDir": "src/Migration"

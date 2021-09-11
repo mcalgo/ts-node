@@ -14,15 +14,22 @@ const typeorm_1 = require("typeorm");
 let User = class User {
 };
 __decorate([
-    typeorm_1.PrimaryGeneratedColumn(),
+    typeorm_1.PrimaryGeneratedColumn({
+        type: 'int'
+    }),
     __metadata("design:type", Number)
 ], User.prototype, "userID", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({
+        type: 'nvarchar',
+        length: 100,
+    }),
     __metadata("design:type", String)
 ], User.prototype, "name", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({
+        type: 'nvarchar',
+    }),
     __metadata("design:type", Number)
 ], User.prototype, "money", void 0);
 User = __decorate([

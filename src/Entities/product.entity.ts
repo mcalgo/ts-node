@@ -3,16 +3,24 @@ import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 @Entity('Products')
 export class Product {
 
-    @PrimaryGeneratedColumn()
-    productID : number;
+    @PrimaryGeneratedColumn({
+        type: 'int'
+    })
+    id : number;
 
-    @Column()
+    @Column({
+        type: 'nvarchar'
+    })
     name: string;
 
-    @Column()
+    @Column({
+        type: 'nvarchar'
+    })
     category: string;
 
-    @Column()
+    @Column({
+        type: 'nvarchar'
+    })
     price: String;
 
     @Column({

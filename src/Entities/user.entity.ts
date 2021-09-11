@@ -3,12 +3,19 @@ import { Entity,  Column, PrimaryGeneratedColumn } from 'typeorm';
 @Entity('Users')
 export class User {
 
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn({
+        type: 'int'
+    })
     userID: number;
 
-    @Column()
+    @Column({
+        type: 'nvarchar',
+        length: 100,
+    })
     name: string;
 
-    @Column()
+    @Column({
+        type: 'nvarchar',
+    })
     money: number;    
 }

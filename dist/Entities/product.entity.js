@@ -14,19 +14,27 @@ const typeorm_1 = require("typeorm");
 let Product = class Product {
 };
 __decorate([
-    typeorm_1.PrimaryGeneratedColumn(),
+    typeorm_1.PrimaryGeneratedColumn({
+        type: 'int'
+    }),
     __metadata("design:type", Number)
-], Product.prototype, "productID", void 0);
+], Product.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({
+        type: 'nvarchar'
+    }),
     __metadata("design:type", String)
 ], Product.prototype, "name", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({
+        type: 'nvarchar'
+    }),
     __metadata("design:type", String)
 ], Product.prototype, "category", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({
+        type: 'nvarchar'
+    }),
     __metadata("design:type", String)
 ], Product.prototype, "price", void 0);
 __decorate([
