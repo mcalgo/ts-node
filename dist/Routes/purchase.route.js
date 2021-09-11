@@ -12,6 +12,6 @@ router.route('/').get(purchaseController.getPurchases.bind(purchaseController))
     .post(purchaseController.postPurchase.bind(purchaseController));
 router.route('/:purchase').get(purchaseController.getPurchase.bind(purchaseController))
     .put(purchaseController.putPurchase.bind(purchaseController))
-    .delete(purchaseController.delectPurchase.bind(purchaseController));
+    .delete(purchaseController.deletPurchase.bind(purchaseController));
 exports.default = router;
 //# sourceMappingURL=purchase.route.js.map

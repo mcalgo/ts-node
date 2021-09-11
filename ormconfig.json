@@ -5,12 +5,11 @@
     "username": "root",
     "password": "S1e2bastian",
     "database": "Node_mysql_ts",
-    "entities": ["dist/entity/**/*.js"],
+    "entities": ["dist/Entities/*.entity.js"],
     "synchronize": true,
-    "migrations": ["./src/Entities/*.entity.ts"],
+    "migrations": ["src/Migration/*.ts"],
     "cli": {
         "entitiesDir": "src/Entities",
-        "migrationsDir": "src/Migration",
-        "subscribersDir": "src/Subscriber"
+        "migrationsDir": "src/Migration"
     }
 }
