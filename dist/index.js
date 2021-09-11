@@ -10,6 +10,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const app_1 = require("./app");
+require("reflect-metadata");
+const typeorm_1 = require("typeorm");
+const typeorm_typedi_extensions_1 = require("typeorm-typedi-extensions");
+typeorm_1.useContainer(typeorm_typedi_extensions_1.Container);
 function main() {
     return __awaiter(this, void 0, void 0, function* () {
         //Express server initializartion

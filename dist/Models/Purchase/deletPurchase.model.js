@@ -5,13 +5,17 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.DocumentTypes = void 0;
-const typeorm_1 = require("typeorm");
-let DocumentTypes = class DocumentTypes {
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-DocumentTypes = __decorate([
-    typeorm_1.Entity()
-], DocumentTypes);
-exports.DocumentTypes = DocumentTypes;
-//# sourceMappingURL=DocumentType.js.map
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DelectPurchase = void 0;
+const class_validator_1 = require("class-validator");
+class DelectPurchase {
+}
+__decorate([
+    class_validator_1.IsNotEmpty(),
+    __metadata("design:type", Number)
+], DelectPurchase.prototype, "ProductoParchaseID", void 0);
+exports.DelectPurchase = DelectPurchase;
+//# sourceMappingURL=deletPurchase.model.js.map

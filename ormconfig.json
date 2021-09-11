@@ -6,5 +6,11 @@
     "password": "S1e2bastian",
     "database": "Node_mysql_ts",
     "entities": ["dist/entity/**/*.js"],
-    "synchronize": true
+    "synchronize": true,
+    "migrations": ["./src/Entities/*.entity.ts"],
+    "cli": {
+        "entitiesDir": "src/Entities",
+        "migrationsDir": "src/Migration",
+        "subscribersDir": "src/Subscriber"
+    }
 }

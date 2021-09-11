@@ -18,8 +18,9 @@ const morgan_1 = __importDefault(require("morgan"));
 const cors_1 = __importDefault(require("cors"));
 const typeorm_1 = require("typeorm");
 //Routes
-const index_routes_1 = __importDefault(require("./Routes/index.routes"));
-const user_routes_1 = __importDefault(require("./Routes/user.routes"));
+const user_route_1 = __importDefault(require("./Routes/user.route"));
+const purchase_route_1 = __importDefault(require("./Routes/purchase.route"));
+const product_route_1 = __importDefault(require("./Routes/product.route"));
 class App {
     constructor(port) {
         this.port = port;
@@ -36,13 +37,14 @@ class App {
     }
     middlewares() {
         this.app.use(morgan_1.default('dev'));
-        /*this.app.use(express.urlencoded({extended: false})) formularios*/
+        this.app.use(express_1.default.urlencoded({ extended: false }));
         this.app.use(express_1.default.json());
         this.app.use(cors_1.default());
     }
     routes() {
-        this.app.use('/api', index_routes_1.default);
-        this.app.use('/api/user', user_routes_1.default);
+        this.app.use('/api/user', user_route_1.default);
+        this.app.use('/api/purchase', purchase_route_1.default);
+        this.app.use('/api/products', product_route_1.default);
     }
     listen() {
         return __awaiter(this, void 0, void 0, function* () {
