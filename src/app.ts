@@ -25,7 +25,19 @@ export class App {
     }
 
     connectDB(){
-        createConnection();
+
+        let retries = 5; 
+
+        while (retries) {
+            try {
+                createConnection();    
+            } catch (error) {
+                console.log(error) 
+                retries -= 1;
+                console.log(`retries left: ${retries}`);
+                new Promise(res => setTimeout(res, 5000)); 
+            }
+        }
     }
 
     middlewares(){
