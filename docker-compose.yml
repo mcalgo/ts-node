@@ -11,11 +11,14 @@ services:
       POSTGRES_DB:  
     volumes: 
       - ./pgdata:/var/lib/postgresql/data 
-    ports: 5432:5432
+    ports: 
+    - 5432:5432
 
   web:
-    image: 
+    build: 
+      context: . 
     depends_on: 
       - db
     ports:
       - "3000:3000"
+  

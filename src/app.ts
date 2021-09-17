@@ -30,7 +30,18 @@ export class App {
 
         while (retries) {
             try {
-                createConnection();    
+                createConnection({
+                    type: "postgres",
+                    host: "db",
+                    port: 5432,
+                    username: "postgres",
+                    password: "postgres",
+                    database: "node-ts",
+                    entities: [
+                        __dirname + "src/Entities/*.entity.ts"
+                    ],
+                    synchronize: true,
+                });    
             } catch (error) {
                 console.log(error) 
                 retries -= 1;

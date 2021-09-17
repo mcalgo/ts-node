@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { Container } from "typeorm-typedi-extensions";
-import { PurchaseController } from "../Controllers/Purchase.controller";
+import { PurchaseController } from "../Controllers/purchase.controller";
 import Cache from 'express-redis-cache'
 
 /*
